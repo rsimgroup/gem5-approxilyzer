@@ -8,7 +8,10 @@ gem5-Approxilyzer employs static and dynamic analysis, in addition to heuristics
 the run-time of finding approximate instructions and SDC-causing instructions by 3-6x 
 orders of magnitude.
 
-Please remember to cite the following paper when using this project:
+## Citation
+If you use this work, please cite our paper published in the International Conference on Dependable Systems and Networks (DSN) 2019 where we developed and evaluated gem5-Approxilyzer.
+
+R. Venkatagiri, K. Ahmed, A. Mahmoud, S. Misailovic, D. Marinov, C. W. Fletcher, S. V. Adve, “gem5-Approxilyzer: An Open-Source Tool for Application-Level Soft Error Analysis”, International Conference on Dependable Systems and Networks (DSN), 2019.
 http://rsim.cs.illinois.edu/Pubs/19-DSN-gem5Approxilyzer.pdf
 
 ## gem5-Approxilyzer Setup Instructions
