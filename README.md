@@ -1,18 +1,17 @@
-# Approxilyzer
+# gem5-Approxilyzer
 
-Approxilyzer is an open-source framework for instruction level approximation 
-and resiliency software. Approxilyzer provides a systematic way to identify 
+gem5-Approxilyzer is an open-source framework for instruction level approximation 
+and resiliency software. gem5-Approxilyzer provides a systematic way to identify 
 instructions that exhibit first-order approximation potential. It can also identify 
 silent data corruption (SDC) causing instructions in the presence of single-bit errors. 
-Approxilyzer employs static and dynamic analysis, in addition to heuristics, to reduce 
-the run-time of finding Approximate instructions and SDC-causing instructions by 3-6x 
+gem5-Approxilyzer employs static and dynamic analysis, in addition to heuristics, to reduce 
+the run-time of finding approximate instructions and SDC-causing instructions by 3-6x 
 orders of magnitude.
 
-Project overview can be viewed at: https://cs.illinois.edu/approxilyzer
+Please remember to cite the following paper when using this project:
+http://rsim.cs.illinois.edu/Pubs/19-DSN-gem5Approxilyzer.pdf
 
-
-
-## Approxilyzer Setup Instructions
+## gem5-Approxilyzer Setup Instructions
 1. all dependencies for gem5 are required (see gem5 documentation) This includes the following:
 
   * gcc 4.8 or greater
@@ -49,5 +48,5 @@ gem5/configs/common/SysPaths.py: /dist/m5/system/disks
                             /dist/m5/system/binaries
 
 
-## How to use Approxilyzer
+## How to use gem5-Approxilyzer
 1. In progress
