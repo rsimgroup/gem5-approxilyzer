@@ -1,7 +1,6 @@
 # gem5-Approxilyzer
 
-gem5-Approxilyzer is an open-source framework for instruction level approximation 
-and resiliency software. gem5-Approxilyzer provides a systematic way to identify 
+gem5-Approxilyzer is an open-source framework for comprehensive and automated application-level soft error analysis. gem5-Approxilyzer provides a systematic way to identify 
 instructions that exhibit first-order approximation potential. It can also identify 
 silent data corruption (SDC) causing instructions in the presence of single-bit errors. 
 gem5-Approxilyzer employs static and dynamic analysis, in addition to heuristics, to reduce 
