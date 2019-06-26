@@ -9,7 +9,7 @@ import os
 import sys
 
 if len(sys.argv) != 5:
-    print('Usage: python parse.py [app_name] [main_start] [main_end] [isa]')
+    print('Usage: python gen_simplified_trace.py [app_name] [main_start] [main_end] [isa]')
     exit()
 
 app_name = sys.argv[1]

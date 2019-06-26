@@ -12,7 +12,7 @@ from inj_create import x86_inj_functions
 from trace import trace
 
 if len(sys.argv) != 3:
-    print('Usage: python postprocessing.py [app_name] [isa]')
+    print('Usage: python postprocess.py [app_name] [isa]')
     exit()
 
 app_name = sys.argv[1]
