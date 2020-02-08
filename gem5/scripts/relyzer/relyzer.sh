@@ -23,7 +23,15 @@ if [ ! -f $apps_dir/${app_name}_parsed.txt ]; then
     python inst_database.py $apps_dir/${app_name}.dis $apps_dir/${app_name}_parsed.txt
 fi
 
-python control_equivalence.py $app_name $isa
+python control_equivalence_export.py $app_name $isa
+
+python control_equivalence_import.py
+
+cd $apps_dir; sort -t ':' -k1 ${app_name}_control_equivalence_int.txt -o ${app_name}_control_equivalence_int.txt
+
+cd $APPROXGEM5/gem5/scripts/relyzer
+
+python control_equivalence_final.py $app_name $isa
 
 python store_equivalence.py $app_name $isa
 
