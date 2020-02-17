@@ -76,7 +76,9 @@ mkdir -p $APPROXGEM5/workloads/checkpoint/x86/${APP_NAME}
 ```
 3. Go to the project's gem5 directory, and setup initial disk image checkpoints. If you are unfimiliar with this process, the following sample command starts up the disk image from scratch:
 ```
-build/X86/gem5.fast configs/example/fs.py --disk-image=$APPROXGEM5/dist/m5/system/disks/${DISK_IMAGE_NAME}.img --kernel=$APPROXGEM5/dist/m5/system/binaries/vmlinux-${VERSION}
+build/X86/gem5.fast configs/example/fs.py \
+--disk-image=$APPROXGEM5/dist/m5/system/disks/${DISK_IMAGE_NAME}.img \
+--kernel=$APPROXGEM5/dist/m5/system/binaries/vmlinux-${VERSION}
 ```
 This will create an `m5out` directory, which will store any checkpoints currently created.
 
@@ -84,6 +86,9 @@ This will create an `m5out` directory, which will store any checkpoints currentl
 ```
 m5 checkpoint; [exec binary with args or run script]; m5 writefile [output filename]; m5 exit
 ```
+
+IMPORTANT: if you are using the gem5-approxilyzer provided disk image, m5 writefile may not be the latest version. You can still use the above command, but replace `m5` with `/root/m5`.
+
 Note the checkpoint's tick number once exiting the simulation.
 
 5. Move the checkpoint from `m5out` to the corresponding app checkpoint directory:
