@@ -8,7 +8,10 @@ gem5-Approxilyzer employs static and dynamic analysis, in addition to heuristics
 the run-time of finding approximate instructions and SDC-causing instructions by 3-6x 
 orders of magnitude.
 
-Please remember to cite the following paper when using this project:
+## Citation
+If you use this work, please cite our paper published in the International Conference on Dependable Systems and Networks (DSN) 2019 where we developed and evaluated gem5-Approxilyzer.
+
+R. Venkatagiri, K. Ahmed, A. Mahmoud, S. Misailovic, D. Marinov, C. W. Fletcher, S. V. Adve, “gem5-Approxilyzer: An Open-Source Tool for Application-Level Soft Error Analysis”, International Conference on Dependable Systems and Networks (DSN), 2019.
 http://rsim.cs.illinois.edu/Pubs/19-DSN-gem5Approxilyzer.pdf
 
 ## gem5-Approxilyzer Setup Instructions
@@ -51,7 +54,7 @@ gem5/configs/common/SysPaths.py: /dist/m5/system/disks
 
 
 ## How to use gem5-Approxilyzer
-1. Compile your application binaries with particular region-of-interest (ROI) indicators. In C/C++, this may look something like:
+1. Prepare your application. First, compile your application binaries with particular region-of-interest (ROI) indicators. In C/C++, this may look something like:
 ```
 // ROI start
 asm volatile("mov %rax,%rax");
@@ -66,6 +69,7 @@ Once compiled, use **objdump** to disassemble the binary:
 objdump -D -S ${BINARY_NAME} > ${BINARY_NAME}.dis
 ```
 Note the PCs of the *beginning* and *end* of the ROI (`${MAIN_START}` and `${MAIN_END}` in step 6). 
+Additionally, ensure the application has an error quality metric that can be evaluated from its output. Refer to `gem5/scripts/injections/detailed_app_leveL_analysis.pl` for an example, and insert the metric into that script.
 
 Refer to gem5's [documentation](http://gem5.org/Disk_images) for adding applications to the gem5 disk image.
 
